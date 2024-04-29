@@ -1,0 +1,21 @@
+@import './variables';
+
+@mixin onDesktop {
+  @media (min-width: $min-desktop-width) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $min-tablet-width) {
+    @content;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} $transition-duration $transition-delay;
+
+  &:hover {
+    #{$property}: $toValue;
+  }
+}

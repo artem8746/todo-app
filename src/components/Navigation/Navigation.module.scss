@@ -1,0 +1,60 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: fit-content;
+
+  &__link {
+    position: relative;
+
+    color: $primary-text-color;
+    font-family: inherit;
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: 2px;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -8px;
+
+      display: block;
+      height: 1px;
+      width: 100%;
+
+      background-color: $primary-text-color;
+      transition: transform $transition-duration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &--active {
+      &::after {
+        content: '';
+
+        position: absolute;
+        bottom: -8px;
+
+        display: block;
+        height: 2px;
+        width: 100%;
+
+        background-color: $primary-text-color;
+        transition: transform $transition-duration;
+        transform: scale(1);
+        transform-origin: left;
+      }
+    }
+
+    @include onDesktop {
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+}
