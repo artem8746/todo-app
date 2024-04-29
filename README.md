@@ -1,3 +1,3 @@
 ## Start the project
-
-# run 'npm run dev'
+# run npm i
+# run npm run dev
